@@ -1,0 +1,71 @@
+{% extends 'base_black.html' %}
+{% load static %}
+{% block nav_bg %}
+<div class="page-header-1-figure m-parallax">
+    <div class="page-header-1-image m-parallax-image"
+        style="background-image: url({% static 'images/bg-image-2.jpg' %});"></div>
+</div>
+{% endblock nav_bg %}
+{% block nav_content %}
+<section class="breadcrumbs-custom">
+    <div class="breadcrumbs-custom-inner">
+        <div class="container">
+            <div class="breadcrumbs-custom-main m-parallax-content">
+                <h2 class="breadcrumbs-custom-title">
+                    {% if content_type == 'short_film'%}
+                    Short Film
+                    {% elif content_type == 'podcast'%}
+                    Podcast
+                    {% elif content_type == 'documentary'%}
+                    Documentary
+                    {% elif content_type == 'entertainment'%}
+                    Entertainment Project
+                    {% endif %}
+                </h2>
+                <p>Explore Categories: Discover a variety of content across different genres, from short films to documentaries, all in one place.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock nav_content %}
+{% block content %}
+
+<section class="section section-lg bg-default">
+    <div class="container">
+        <div class="text-center wow fadeIn" data-wow-delay="100">
+            <h2>Popular {% if content_type == 'short_film'%}
+                Short Film
+                {% elif content_type == 'podcast'%}
+                Podcast
+                {% elif content_type == 'documentary'%}
+                Documentary
+                {% elif content_type == 'entertainment'%}
+                Entertainment Project
+                {% endif %}</h2>
+        </div>
+        <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3"
+            data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px"
+            data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="100">
+            {% for item in contents %}
+            <div class="item">
+                <div class="box-nina">
+                    <div class="box-nina-media"><img src="{{ item.thumbnail.url }}" alt="" width="356"
+                            height="412" />
+                    </div>
+                    <div class="box-nina-text">
+                        <h4><a class="link-white" href="{% url 'content_detail' pk=item.pk %}">{{ item.title }}</a></h4>
+                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
+                                Adventures</span></div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No blogs available.</p>
+            {% endfor %}    
+        
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

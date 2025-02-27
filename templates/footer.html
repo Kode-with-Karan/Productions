@@ -1,0 +1,73 @@
+{% load static %}
+<!-- Page Footer-->
+
+<footer class="section footer-modern context-dark">
+    <div class="footer-modern-main">
+        <div class="container">
+            <div class="row row-30 justify-content-lg-between">
+                <div class="col-sm-5 col-md-3 col-lg-3">
+                    <p class="footer-modern-title">Useful Links</p>
+                    <div class="footer-modern-item-block">
+                        <ul class="list list-1">
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'blog_list' %}">Blog</a></li>
+                            <li><a href="{% url 'team' %}">Team</a></li>
+                            <li><a href="{% url 'collaborate' %}">Collaborate</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-5 col-lg-4">
+                    <p class="footer-modern-title">Categories</p>
+                    <div class="footer-modern-item-block" style="max-width: 300px;">
+                        <div class="row row-13">
+                            <div class="col-6">
+                                <ul class="list list-1">
+                                    <li><a href="{% url 'category' 'short_film' %}">Short Films</a></li>
+                                    <li><a href="{% url 'category' 'podcast' %}">Podcast</a></li>
+                                    <li><a href="{% url 'category' 'documentary' %}">Documentary</a></li>
+                                    <li><a href="{% url 'category' 'entertainment' %}">Entertainment Project</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list list-1">
+                                    <li><a href="{% url 'category' 'music' %}">Music</a></li>
+                                    <li><a href="{% url 'category' 'education' %}">Education</a></li>
+                                    <li><a href="{% url 'category' 'interviews' %}">Interviews</a></li>
+                                    <li><a href="{% url 'category' 'animation' %}">Animation</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <p class="footer-modern-title">Get in Touch</p>
+                    <div class="footer-modern-item-block">
+                        <ul class="list list-1">
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'privacy' %}">Privacy-policy</a></li>
+                            <li><a href="{% url 'terms' %}">Terms & Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-modern-aside">
+        <div class="container">
+            <div class="footer-modern-aside-layout"><a class="brand" href="index.html"><img
+                        class="brand-logo-dark" src="{% static 'images/logo-default-133x19.png' %}" alt="" width="133"
+                        height="19" srcset="{% static 'images/logo-default-266x37.png' %} 2x" /><img class="brand-logo-light"
+                        src="{% static 'images/logo-inverse-133x19.png' %}" alt="" width="133" height="19"
+                        srcset="{% static 'images/logo-inverse-266x37.png' %} 2x" /></a>
+                <p class="rights"><span>&copy;&nbsp; </span><span
+                        class="copyright-year"></span><span>&nbsp;</span><span>. All rights
+                        reserved.&nbsp;</span><a href="{% url 'privacy' %}">Privacy Policy</a></p>
+                <div>
+                    <div class="group group-sm"><a class="link-1 icon mdi mdi-instagram" href="#"></a><a
+                            class="link-1 icon mdi mdi-facebook" href="#"></a><a
+                            class="link-1 icon mdi mdi-youtube-play" href="#"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

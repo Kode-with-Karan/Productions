@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin: 100px;"></div>
+<div class="video-container">
+    <video src="{{ content.file.url }}" controls></video>
+</div>
+
+<style>
+    .video-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100vh; /* Full viewport height */
+        width: 100%;
+    }
+
+    video {
+        max-width: 80%; /* Adjust width as needed */
+        max-height: 80vh; /* Prevent overflow */
+        border-radius: 10px; /* Optional: Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+    }
+</style>
+<!-- 
+
+<div class="container">
+    <h2>{{ content.title }}</h2>
+    <p><strong>Type:</strong> {{ content.content_type }}</p>
+    <p><strong>Uploaded By:</strong> {{ content.uploaded_by.username }}</p>
+    <p><strong>Views:</strong> {{ content.views }}</p>
+    <p><strong>Likes:</strong> {{ content.likes }}</p>
+
+    {% if content.file.url %}
+        <video width="100%" controls>
+            <source src="{{ content.file.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+
+    <p>{{ content.description }}</p>
+
+    {% if content.earnings %}
+        <p><strong>Earnings:</strong> ${{ content.earnings }}</p>
+    {% endif %} -->
+</div>
+{% endblock %}
