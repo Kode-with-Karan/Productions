@@ -49,7 +49,7 @@
         <!--Swiper Pagination-->
         <div class="swiper-pagination"></div>
         <!--Swiper Navigation-->
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev" style="transform: rotate(180deg);"></div>
         <div class="swiper-button-next"></div>
     </div>
     <div class="decorative-word">Movies</div>
@@ -157,7 +157,23 @@
         <div class="owl-carousel owl-theme-1 wow fadeIn" data-items="1" data-sm-items="2" data-md-items="3"
             data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-margin="15px" data-xxl-margin="40px"
             data-nav="true" data-dots="false" data-autoplay="true" data-wow-delay="450">
+
+            {% for item in contents %}
             <div class="item">
+                <div class="box-nina">
+                    <div class="box-nina-media"><img src="{{ item.thumbnail.url }}" alt="" width="356"
+                            height="412" />
+                    </div>
+                    <div class="box-nina-text">
+                        <h4><a class="link-white" href="{% url 'content_detail' pk=item.pk %}">{{ item.title }}</a></h4>
+                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
+                                Adventures</span></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="item">
                 <div class="box-nina">
                     <div class="box-nina-media"><img src="{% static 'content/images/index-img-07-356x412.jpg' %}" alt="" width="356"
                             height="412" />
@@ -228,7 +244,7 @@
                                 Adventures</span></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -252,10 +268,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'short_film' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-1-363x260.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-1-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">short_film</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-video"></i> &nbsp; Short Film</p>
                             </div>
                         </a>
                     </div>
@@ -263,10 +279,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'podcast' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-2-363x260.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-2-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Podcast</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-microphone-lines"></i> &nbsp; Podcast</p>
                             </div>
                         </a>
                     </div>
@@ -274,10 +290,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'documentary' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-3-363x260.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-3-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Documentary</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-book"></i> &nbsp; Documentary</p>
                             </div>
                         </a>
                     </div>
@@ -285,10 +301,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'entertainment' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-4-363x260.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-4-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Entertainment Project</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-circle-play"></i> &nbsp; Entertainment Project</p>
                             </div>
                         </a>
                     </div>
@@ -297,10 +313,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'animation' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/index-img-01-356x412.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-5-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Animation</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-child-reaching"></i> &nbsp; Animation</p>
                             </div>
                         </a>
                     </div>
@@ -308,10 +324,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'interviews' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/index-img-02-356x412.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-6-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Interviews</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-clipboard-question"></i> &nbsp; Interviews</p>
                             </div>
                         </a>
                     </div>
@@ -319,10 +335,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'education' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/index-img-03-356x412.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-7-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Education</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-school"></i> &nbsp; Education</p>
                             </div>
                         </a>
                     </div>
@@ -330,10 +346,10 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'music' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/index-img-04-356x412.jpg' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-8-363x260.webp' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
-                                <p class="heading-4 destination-1-title">Music</p>
+                                <p class="heading-4 destination-1-title"><i class="fa-solid fa-film"></i> &nbsp; Music</p>
                             </div>
                         </a>
                     </div>
@@ -343,17 +359,29 @@
     </div>
 </section>
 <!--Watch Anywhere-->
-<!-- <section class="section section-custom-2 bg-default">
+<section class="section section-custom-2 bg-default">
     <div class="container">
         <div class="row row-40 row-60 justify-content-between">
             <div class="col-lg-5">
-                <h5 class="wow fadeInUp" data-wow-delay=".025s">Download Our App</h5>
-                <h2 class="style-title-2 wow fadeInUp" data-wow-delay=".05s">Watch Anywhere</h2>
-                <h6 class="text-gray-500 font-weight-regular ls-2 wow fadeInUp" data-wow-delay=".075s">Install
-                    EMovies app for your device and enjoy high-quality movies and TV shows anywhere.</h6>
-                <div class="button-wrap wow fadeInUp" data-wow-delay="1s"><a href="#"><img
+                <!-- <h5 class="wow fadeInUp" data-wow-delay=".025s">Download Our App</h5> -->
+                <h2 class="style-title-2 wow fadeInUp" data-wow-delay=".05s">Advertise with us?</h2>
+                <h6 class="text-gray-500 font-weight-regular ls-2 wow fadeInUp" data-wow-delay=".075s">Reach a highly engaged audience by promoting your brand on our platform! Whether you're a filmmaker, artist, or business looking to connect with creative minds, we offer customized advertising solutions to help you grow.
+                    <br><br>
+                    <ul>
+                        <li>✔️ Targeted Exposure – Connect with content creators, filmmakers, and entertainment enthusiasts.</li>
+                        <li>✔️ Diverse Ad Options – Choose from banner ads, sponsored content, video promotions, and more.</li>
+                        <li>✔️ Maximized Engagement – Our platform ensures your brand reaches the right audience at the right time.</li>
+                        <br>
+                        <li>📩 Get in Touch – Let’s discuss how we can amplify your brand’s presence!</h6></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    
+                <!-- <div class="button-wrap wow fadeInUp" data-wow-delay="1s"><a href="#"><img
                             src="{% static 'content/images/button-img-01-151x49.png' %}" alt="" width="151" height="49" /></a><a href="#"><img
-                            src="{% static 'content/images/button-img-02-153x49.png' %}" alt="" width="153" height="49" /></a></div>
+                            src="{% static 'content/images/button-img-02-153x49.png' %}" alt="" width="153" height="49" /></a></div> -->
             </div>
             <div class="col-lg-7 parallax-scene-js">
                 <div class="section-image-1"><img src="{% static 'content/images/section-image-1-546x33.png' %}" alt="" width="546"
@@ -372,7 +400,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- News-->
 <section class="section section-lg bg-color-7">
     <div class="container">
