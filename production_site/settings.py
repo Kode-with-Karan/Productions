@@ -160,3 +160,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STRIPE_SECRET_KEY = "sk_test_51QrKuaCaii6cKKZ9P2MDoF4e6vQy0XWtem4eqOaddYyrELqkWLggzBqj8t7EFCtuNXC7MXefjN05xFBxbwiv2G1Y00sXcvluvE"
 STRIPE_PUBLIC_KEY = "pk_test_51QrKuaCaii6cKKZ9W68n3Gn7xoIvTyq9AZusi4Qyk7w4UZINFY7lIk8dVouZJOCVxbjA1rXoifZlMN4GERaxYi1600TLhjFFFV"
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://echoesproductions.com",
+    "https://www.echoesproductions.com"
+]

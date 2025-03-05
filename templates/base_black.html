@@ -64,6 +64,8 @@
                                     <li class="rd-nav-item"><a class="rd-nav-link"
                                             href="{% url 'collaborate' %}">Collaborate</a>
                                     </li>
+                                    {% endif %}
+                                    
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'blog_list' %}">Blog</a>
                                     </li>
                                     <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'notifications' %}">Notifications
@@ -72,6 +74,7 @@
                                         {% endif %}
                                     </a>
                                 </li> -->
+                                {% if user.is_authenticated %}
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="#">Profile</a>
                                         <ul class="rd-menu rd-navbar-dropdown">
                                             <li class="rd-dropdown-item"><a class="rd-dropdown-link"
@@ -81,17 +84,12 @@
                                                     href="{% url 'upload_content' %}">Upload
                                                 </a></li>
         
-                                            <!-- <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                    href="{% url 'notifications' %}">Notifications
-                                                    {% if user.is_authenticated and unread_notifications > 0 %}
-                                                    <span class="badge">{{ unread_notifications }}</span>
-                                                    {% endif %}
-                                                </a></li> -->
         
                                         </ul>
                                     </li>
                                     
-        
+                                    {% endif %}
+                                    
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="#">Support</a>
         
                                         <ul class="rd-menu rd-navbar-megamenu">
@@ -105,13 +103,7 @@
                                                         <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
                                                                 href="#">Terms & Condition</a></li>
                                                     </ul>
-                                                    <!-- <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="icon-lists.html">Icon Lists</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="counters-and-accordions.html">Counters &amp;
-                                                                Accordions</a></li>
-                                                    </ul> -->
+                                                    
                                                 </div>
                                             </li>
                                             <li class="rd-megamenu-item">
@@ -125,21 +117,12 @@
                                                         <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
                                                                 href="{% url 'contact' %}">Contact Us</a></li>
                                                     </ul>
-                                                    <!-- <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="404-page.html">404 Page</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="coming-soon.html">Coming Soon</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="privacy-policy.html">Privacy policy</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="search-results.html">Search results</a></li>
-                                                    </ul> -->
+                                                    
                                                 </div>
                                             </li>
                                         </ul>
                                     </li>
-                                    
+                                    {% if user.is_authenticated %}
                                     <form action="{% url 'logout' %}" method="post"
                                         style="display: inline-block; padding: 0 20px;">
                                         {% csrf_token %}
@@ -159,79 +142,10 @@
                                     <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'browse_content' %}">🔍</a>
                                     </li>
         
-                                    <!-- 
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                        
-                                        <ul class="rd-menu rd-navbar-megamenu">
-                                            <li class="rd-megamenu-item">
-                                                <p class="rd-megamenu-title">Elements</p>
-                                                <div class="rd-megamenu-block">
-                                                    <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="typography.html">Typography</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="buttons.html">Buttons</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="forms.html">Forms</a></li>
-                                                    </ul>
-                                                    <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="icon-lists.html">Icon Lists</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="counters-and-accordions.html">Counters &amp;
-                                                                Accordions</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="rd-megamenu-item">
-                                                <p class="rd-megamenu-title">Pages</p>
-                                                <div class="rd-megamenu-block">
-                                                    <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="about.html">About</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="our-team.html">Our Team</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="contact-us.html">Contact Us</a></li>
-                                                    </ul>
-                                                    <ul class="rd-megamenu-list">
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="404-page.html">404 Page</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="coming-soon.html">Coming Soon</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="privacy-policy.html">Privacy policy</a></li>
-                                                        <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link"
-                                                                href="search-results.html">Search results</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li> -->
-                                    <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="grid-blog.html">Blog</a>
-                                        
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="blog-post.html">Blog
-                                                    post</a></li>
-                                        </ul>
-                                    </li> -->
+                             
                                 </ul>
                             </div>
-                            <!--RD Navbar Search-->
-                            <!-- <div class="rd-navbar-search">
-                                <button class="rd-navbar-search-toggle rd-navbar-fixed-element-2"
-                                    data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                                <form class="rd-search rd-search-custom" action="search-results.html"
-                                    data-search-live="rd-search-results-live" method="GET">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="rd-navbar-search-form-input">Search</label>
-                                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input"
-                                            type="text" name="s" autocomplete="off" />
-                                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                                    </div>
-                                    <button class="rd-search-form-submit fa-search" type="submit"></button>
-                                </form>
-                            </div> -->
+                            
                         </div>
                     </div>
                     <div class="rd-navbar-placeholder"></div>

@@ -11734,7 +11734,12 @@ html.tablet .ui-to-top {
 .context-dark .rd-navbar-static .rd-nav-link,
 .context-dark .rd-navbar-static .rd-nav-link:active,
 .context-dark .rd-navbar-static .rd-nav-link:focus {
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #ffe142;
+}
+
+.context-dark .rd-navbar-static .rd-nav-link:hover{
+    color: white;
 }
 
 /*

@@ -14,20 +14,15 @@
                         <div
                             class="row row-40 flex-column-reverse flex-md-row justify-content justify-content-lg-between">
                             <div class="col-md-6 col-lg-5 col-xl-6">
-                                <ul class="list-movie-info" data-caption-animate="fadeIn" data-caption-delay="50">
+                                <!-- <ul class="list-movie-info" data-caption-animate="fadeIn" data-caption-delay="50">
                                     <li>USA</li>
                                     <li>Mar 21, 2019</li>
                                     <li>imdb: 5,8\10</li>
-                                </ul>
+                                </ul> -->
                                 <h1 class="block-8" data-caption-animate="fadeInUp" data-caption-delay="100">
                                     {{ item.title }}</h1>
                                 <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">
                                     {{ item.description }}</p>
-                                <!-- <div class="text-center text-lg-left button-custom-offset"><a
-                                        class="button button-custom" href="https://youtu.be/d5k9CILJivQ"
-                                        data-lightgallery="item" data-caption-animate="fadeInUp"
-                                        data-caption-delay="450"><span class="icon mdi mdi-play"></span>Watch
-                                        now</a></div> -->
                                 <div class="text-center text-lg-left button-custom-offset"><a
                                         class="button button-custom" href="http://127.0.0.1:8000{{item.file.url}}"
                                         data-lightgallery="item" data-caption-animate="fadeInUp"
@@ -83,67 +78,6 @@
                 </div>
             </div>
             {% endfor %}
-            <!-- <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-02-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">John Wick 3</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                Action</span></div>
-                    </div>
-                    <div class="box-nina-badge">new</div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-03-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Deadpool 2</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                Action</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-04-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Alita: Battle Angel</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                Action</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-05-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Ready Player One</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2018,
-                                Action</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-06-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Wonder Park</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                Animation</span></div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -173,78 +107,6 @@
             </div>
             {% endfor %}
 
-            <!-- <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-07-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">West World </a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2016,
-                                Drama</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-08-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Stranger Things</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2016,
-                                Drama</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-09-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Kidding</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                comedy</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-10-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Game of thrones</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2011,
-                                Adventures</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-11-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">Real Detective</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2016,
-                                Crime</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="box-nina">
-                    <div class="box-nina-media"><img src="{% static 'content/images/index-img-12-356x412.jpg' %}" alt="" width="356"
-                            height="412" />
-                    </div>
-                    <div class="box-nina-text">
-                        <h4><a class="link-white" href="movie-page.html">The Mandalorian</a></h4>
-                        <div class="box-nina-info"><span class="icon mdi mdi-calendar-today"></span><span>2019,
-                                Adventures</span></div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -268,7 +130,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'short_film' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-1-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-1-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-video"></i> &nbsp; Short Film</p>
@@ -279,7 +141,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'podcast' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-2-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-2-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-microphone-lines"></i> &nbsp; Podcast</p>
@@ -290,7 +152,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'documentary' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-3-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-3-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-book"></i> &nbsp; Documentary</p>
@@ -301,7 +163,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'entertainment' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-4-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-4-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-circle-play"></i> &nbsp; Entertainment Project</p>
@@ -313,7 +175,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'animation' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-5-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-5-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-child-reaching"></i> &nbsp; Animation</p>
@@ -324,7 +186,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'interviews' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-6-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-6-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-clipboard-question"></i> &nbsp; Interviews</p>
@@ -335,7 +197,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'education' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-7-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-7-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-school"></i> &nbsp; Education</p>
@@ -346,7 +208,7 @@
                         <a class="destination-1 context-dark" href="{% url 'category' 'music' %}">
                             <figure class="destination-1-figure">
                                 <div class="destination-1-image bg-image"
-                                    style="background-image: url({% static 'content/images/destinations-8-363x260.webp' %});"></div>
+                                    style="background-image: url({% static 'content/images/destinations-8-363x260.png' %});"></div>
                             </figure>
                             <div class="destination-1-caption">
                                 <p class="heading-4 destination-1-title"><i class="fa-solid fa-film"></i> &nbsp; Music</p>
