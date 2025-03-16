@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
 <div id="particles-container"></div>
 <section class="section-lg section-one-screen">
@@ -23,12 +24,11 @@
                                     Facebook</button>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-info btn-block"><span class="fa fa-twitter"></span>
-                                    Twitter</button>
+                                <a href="{% provider_login_url 'twitter' %}"><button class="btn btn-info btn-block"><span class="fa fa-twitter"></span>
+                                    Twitter</button></a>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-danger btn-block"><span class="fa fa-google-plus"></span> Google
-                                    +</button>
+                                <a href="{% provider_login_url 'google' %}"><button class="btn btn-danger btn-block"><span class="fa fa-google"></span> Google</button></a>
                             </div>
                         </div>
                         <div class="row row-30 mt-4">

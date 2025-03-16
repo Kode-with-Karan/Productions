@@ -5,6 +5,7 @@ from .forms import ContentUploadForm,CollaborateUploadForm
 from django.db.models import Q
 from django.contrib import messages
 from blog.models import Blog
+from django.core.mail import send_mail
 
 def browse_content(request):
     query = request.GET.get("q", "")
@@ -78,6 +79,26 @@ def collaborate(request):
             content = form.save(commit=False)
             content.user = request.user
             content.save()
+
+            # Prepare email content
+            subject = "New Collaboration Submission"
+            recipient_email = "karanost12@gmail.com"  # Change to the actual recipient's email
+            sender_email = request.user.email  # Sender is the logged-in user's email
+            message = f"""
+            A new collaboration request has been submitted.
+
+            User: {request.user.get_full_name()} ({request.user.email})
+            
+            Submission Details:
+            ----------------------------
+            """
+            for field, value in form.cleaned_data.items():
+                message += f"{field}: {value}\n"
+
+            # Send the email
+            send_mail(subject, message, sender_email, [recipient_email], fail_silently=False)
+
+
             return redirect('home')
     else:
         form = CollaborateUploadForm()

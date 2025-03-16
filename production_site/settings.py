@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import stripe
+from django.conf import settings
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,10 +50,28 @@ INSTALLED_APPS = [
     'payments',
     'support',  # ✅ New Support App
     'notifications',  # ✅ New Notifications App
+
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    # "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.twitter",
 ]
 
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+
+# LOGIN_REDIRECT_URL = "/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
+    "allauth.account.middleware.AccountMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -158,11 +180,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STRIPE_SECRET_KEY = "sk_test_51QrKuaCaii6cKKZ9P2MDoF4e6vQy0XWtem4eqOaddYyrELqkWLggzBqj8t7EFCtuNXC7MXefjN05xFBxbwiv2G1Y00sXcvluvE"
-STRIPE_PUBLIC_KEY = "pk_test_51QrKuaCaii6cKKZ9W68n3Gn7xoIvTyq9AZusi4Qyk7w4UZINFY7lIk8dVouZJOCVxbjA1rXoifZlMN4GERaxYi1600TLhjFFFV"
-
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000"
     "https://echoesproductions.com",
     "https://www.echoesproductions.com"
 ]
+

@@ -87,7 +87,7 @@
                 <h6 class="mb-0">Recent Salse</h6>
                 <a href="">Show All</a>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive" style="height: 400px;">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
@@ -136,7 +136,11 @@
                     {% for notification in notifications %}
                     <!-- <li>{{ notification.message }} - {{ notification.timestamp }}</li> -->
                     <div class="d-flex align-items-center border-bottom py-3">
+                        {% if request.user.profile.profile_picture %}
                         <img class="rounded-circle flex-shrink-0" src="{{profile.profile_picture.url}}" alt="" style="width: 40px; height: 40px;">
+                        {% else %}
+                            <img class="rounded-circle flex-shrink-0" src="/media/default.png" alt="" style="width: 40px; height: 40px;">
+                        {%endif%}
                         <div class="w-100 ms-3">
                             <div class="d-flex w-100 justify-content-between">
                                 <h6 class="mb-0">{{ notification.user }}</h6>

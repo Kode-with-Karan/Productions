@@ -66,7 +66,18 @@
                                     </li>
                                     {% endif %}
                                     
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'blog_list' %}">Blog</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'about' %}">This Platform</a>
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                                    href="{% url 'filmmaker' %}">For Filmmakers
+                                                </a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                                    href="{% url 'talent' %}">For Talent & Crew
+                                                </a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                                    href="{% url 'investor' %}">For Investors
+                                                </a></li>
+                                        </ul>
                                     </li>
                                     <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'notifications' %}">Notifications
                                         {% if user.is_authenticated and unread_notifications > 0 %}
@@ -198,7 +209,6 @@
                 {% endif %}
 
             </a></li>
-        <li><a href="{% url 'earnings' %}">Earnings</a></li>
         <li><a href="{% url 'contact' %}">Support</a></li>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}

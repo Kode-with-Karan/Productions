@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-
+ 
 <!-- FScreen-->
 <section class="section bg-custom-1 position-relative">
     <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="50000"
@@ -24,9 +24,8 @@
                                 <p class="block-9" data-caption-animate="fadeInUp" data-caption-delay="250">
                                     {{ item.description }}</p>
                                 <div class="text-center text-lg-left button-custom-offset"><a
-                                        class="button button-custom" href="http://127.0.0.1:8000{{item.file.url}}"
-                                        data-lightgallery="item" data-caption-animate="fadeInUp"
-                                        data-caption-delay="450"><span class="icon mdi mdi-play"></span>Watch
+                                        class="button button-custom" href="{% url 'content_display' pk=item.pk %}"
+                                        ><span class="icon mdi mdi-play"></span>Watch
                                         now</a></div>
                             </div>
                             <div class="col-md-6 col-lg-7 col-xl-5 onset-1">

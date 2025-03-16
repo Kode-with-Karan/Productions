@@ -4,7 +4,7 @@
 {% block content %}
 <div style="margin: 100px;"></div>
 <div class="video-container">
-    <video src="{{ content.file.url }}" controls></video>
+    <video src="{{ content.file.url }}" controls preload="metadata"></video>
 </div>
 
 <style>
